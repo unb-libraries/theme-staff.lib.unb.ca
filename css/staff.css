@@ -633,9 +633,15 @@ table.table input { padding: 2px 6px 3px; }
 /* ----- Responsive ------------------ */
 @media (max-width: 979px) and (min-width: 768px) {
   #sidebar-first { width: 22%!important; }
-  #content { width: 72%!important; } 
+  #content,
+  #sidebar-second { width: 72%!important; }
   #sidebar-first.toggle-sb { width: 20%!important; }
-  #content.toggle-sb { width: 74%!important; } 
+  #content.toggle-sb { width: 74%!important; }
+  #sidebar-second .block {
+    float:left;
+    width: 48%;
+  }
+  #block-twitter-block-1.block { float: right; }
 }
 
 @media (max-width: 767px) {
@@ -670,6 +676,21 @@ table.table input { padding: 2px 6px 3px; }
   .content-body .block { width: auto; }
 }
 
+@media (max-width: 480px) {
+  /* change User menu items to centered buttons */
+  #block-system-user-menu ul.menu { text-align: center; }
+  #block-system-user-menu ul.menu a {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-top: 6px;
+    padding-right: 4px;
+    padding-bottom: 6px;
+  }
+  #block-system-user-menu ul.menu a:hover { background-color: #e5e5e5; }
+
+  /* twitter feed full width */
+  #block-twitter-block-1.block { width: 100%; }
+}
 /* ----- Print ----------------------- */
 @media print {
   body.node-type-library-hours a[href]:after {
