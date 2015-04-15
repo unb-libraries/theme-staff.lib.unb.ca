@@ -23,6 +23,8 @@ a:hover, a:focus { color: #aa0404; text-decoration: underline; }
 a .summary { color: #999; }
 
 .book-navigation a:hover { background-color: #eee; }
+.book_printer a { background: transparent url(../images/printer-friendly-16.png) no-repeat left center; padding-left: 19px;}
+.book_add_child a { background: transparent url(../images/add-page-16.png) no-repeat left center; padding-left: 19px; }
 
 /* ----- Lists ----------------------- */
 li {
@@ -353,8 +355,9 @@ ul.nav { margin-bottom:0; }
 .pager>li.pager-ellipsis {
   color: #333;
   cursor: default;
-  padding: 0 0.75em;
+  padding: 0 0.7em;
 }
+.pager>li.pager-current { font-size: larger; }
 
 /* hide First/Last pager links */
 .pager li.pager-last,
@@ -541,6 +544,10 @@ html.js fieldset.collapsed {
   background: url(/misc/message-16-error.png) no-repeat 0.5em center;
   padding-left: 2em;
 }
+.form-actions #edit-cancel {
+  background: url(../images/cancel-16.png) no-repeat 0.5em center;
+  padding-left: 2em;
+}
 .form-actions #edit-preview {
   background: url(/misc/message-16-info.png) no-repeat 0.5em center;
   padding-left: 2em;
@@ -561,11 +568,14 @@ html.js fieldset.collapsed {
   padding: 15px;
 }
 
+.form-managed-file {
+  border: 1px solid #ddd;
+  padding: 1px;
+}
 .form-managed-file input[type="file"] {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   display: inline-block;
-  height: 2.5em;
   padding: 3px 12px;
   width: 80%;
 }
