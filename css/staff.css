@@ -156,9 +156,10 @@ legend:hover { cursor: pointer; }
   display: none;
 }
 .outline-menu {
-  display: inline-block;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
+  display: inline-block;
   margin: 0;
   padding: .5em;
 }
@@ -275,7 +276,7 @@ ul.nav { margin-bottom:0; }
 .toggle-sb #block-system-navigation h2 { background: url(../images/navigation-min-24.png) no-repeat 0.5em 2px; }
 
 #sidebar-first h2 {
-  border-bottom: 2px inset #e3e3e3;;
+  border-bottom: 2px solid #e3e3e3;;
   font-size: 20px;
   padding:0 0.5em 0.5em 2em;
 }
@@ -306,7 +307,6 @@ ul.nav { margin-bottom:0; }
 /* ----- Pager Nav ------------------- */
 .book-navigation .page-links {
   border-spacing: 5px;
-  border-collapse: separate;
   display: table;
   padding: 0;
   width: 100%;
