@@ -428,7 +428,7 @@ fieldset.wrapper-expanded legend {
   padding-left: 15px;
 }
 
-/* ----- Moved from Content per node: Global ----- */
+/* ----- Moved from Code per node: Global Content ----- */
 /* Glyph, by Harry Roberts */   
 hr.fancy {
     padding: 0;
@@ -471,6 +471,17 @@ body .container.main-container a:hover, body .container.main-container a:focus {
 /* GENERAL OVERRIDES ********************* */
 /* front page content-header */
 .front .content-head, .mc-content { margin-bottom: 0; }
+
+/* Desk statistics custom module*/
+.page-desk-stats .subgroup { margin-left: 1.3em; }
+fieldset.subgroup { border: none; }
+fieldset.subgroup legend {
+  background:none;
+  border: none;
+  cursor: default;
+  font-size:inherit;
+  padding: 0.25em 0;
+}
 
 /* LCD-Display fieldsets 'collapsed' on page load */
 #-list-hil-lcd-items .fieldset-wrapper,
