@@ -55,7 +55,8 @@ select, input[type="file"] {
 }
 
 select,
-input[type="text"] { height: 2.5em; }
+input[type="text"],
+input[type="password"] { height: 2.5em; }
 
 .form-type-radio input,
 .form-type-radio label { display: inline; }
@@ -122,6 +123,11 @@ legend:hover { cursor: pointer; }
   padding: 8px 14px
 }
 
+/* enable User menu block in Header region */
+#block-system-user-menu ul.menu {text-align: right; }
+#block-system-user-menu ul.menu li { display: inline-block; }
+#block-system-user-menu ul.menu a { text-transform: none; }
+
 /* NAVIGATION ***************************** */
 /* ----- Main Navigation ------------- */
 
@@ -172,6 +178,17 @@ legend:hover { cursor: pointer; }
 .outline-menu a.active .level3 { background: transparent url(/misc/message-16-ok.png) no-repeat 1.5em center; }
 
 /* ----- System menus ----- */
+/* user menu */
+#block-system-user-menu { margin-top: 1em; }
+#block-system-user-menu a[href="/user"] {
+  background: transparent url(../images/my-account-16.png) no-repeat 3px center;
+  padding-left: 20px;
+}
+#block-system-user-menu a[href="/user/logout"] {
+  background: transparent url(../images/logout-16.png) no-repeat 4px center;
+  padding-left: 23px;
+}
+
 .content>ul.menu>li>a {
   font-weight: bold;
   text-transform: uppercase;
@@ -285,7 +302,6 @@ ul.nav { margin-bottom:0; }
   padding-bottom: 1em;
 }
 
-/* ----- Second Sidebar Menu Blocks -- */
 /* ----- Admin Menu ------------------ */
 /* ----- Pager Nav ------------------- */
 .book-navigation .page-links {
@@ -448,12 +464,9 @@ hr.fancy:after {
     background: white;
 }
 
-.not-logged-in #block-system-main, .not-logged-in h1.page-header {
-    display: none;
-}
-.not-logged-in h1.page-header.show-header {
-    display: block;
-}
+/* hide any "not authorized" message but show user login */
+.not-logged-in:not(.page-user) #block-system-main { display: none; }
+
 body .container.main-container a, body .container.main-container a:visited {
     color: #cc0000;
 }
