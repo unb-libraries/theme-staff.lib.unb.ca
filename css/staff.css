@@ -606,27 +606,28 @@ table .checkbox input[type="checkbox"] {
   color: #c00;
   text-shadow: none;
 }
-a#submit-event.btn.btn-default:hover,
-a#submit-event.btn.btn-default:focus {
-  background-color: #d43f3a;
-  border-color: #cc0000;
-  color: #fff;
-}
 .view-staff-calendar .btn:hover {
   background-color: #ebebeb;
   border-color: #adadad;
   color: #aa0404;
 }
 
+a#submit-event.btn.btn-default:hover,
+a#submit-event.btn.btn-default:focus {
+  background-color: #d43f3a;
+  border-color: #cc0000;
+  color: #fff;
+}
+
 /* next/previous link */
-.view-staff-calendar .pager li>a {
+.date-nav-wrapper .pager li>a {
  background-color: #fff;
  border-radius: 9px;
  display: inline-block;
  padding: 5px 14px;
  width: auto;
 }
-.view-staff-calendar .pager li>a:hover { background-color: #eee; }
+.date-nav-wrapper .pager li>a:hover { background-color: #eee; }
 
 /* ----- Tables ----- */
 table.table input { padding: 2px 6px 3px; }
