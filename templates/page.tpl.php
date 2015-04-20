@@ -13,16 +13,22 @@
     <div class="row">
       <div class="header-section <?php if (($page['search_box']) || ($page['site_login'])): print 'span8'; else: print 'span12'; endif; ?>">
         <?php if ($logo): ?>
-        <div id="logo" class="site-logo"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" role="presentation" /> </a></div>
+          <div id="logo" class="site-logo">
+          <?php if ($is_front): ?>
+            <img src="<?php print $logo; ?>" alt="<?php print $my_site_title; ?>" role="presentation" />
+          <?php else: ?>
+            <a href="<?php print $front_page; ?>" rel="home"><img src="<?php print $logo; ?>" alt="<?php print $my_site_title; ?>" role="presentation" /></a>
+          <?php endif; ?>
+          </div>
         <?php endif; ?>
         <!-- /#logo -->
         <?php if ($site_name || $site_slogan): ?>
         <div id="name-and-slogan">
           <?php if ($site_name): ?>
-          <div id="site-name" class="site-name"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
+            <div id="site-name" class="site-name"><a href="<?php print $front_page; ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
           <?php if ($site_slogan): ?>
-          <div id="site-slogan" class="site-slogan"><?php print $site_slogan; ?></div>
+            <div id="site-slogan" class="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
         </div>
         <?php endif; ?>
@@ -84,9 +90,6 @@
 <?php endif; ?>
 <div id="main" class="clearfix main" role="main">
   <div class="container">
-    <?php if (!($is_front) && ($breadcrumb)): ?>
-    <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
     <?php if ($page['main_top']): ?>
     <div id="main-top" class="row-fluid main-top"> <?php print render($page['main_top']); ?> </div>
     <?php endif; ?>
@@ -102,6 +105,9 @@
       <?php endif; ?>
       <div id="content" class="mc-content <?php if (($page['sidebar_first']) && ($page['sidebar_second'])): print 'span6'; elseif (($page['sidebar_first']) || ($page['sidebar_second'])): print 'span9'; else: print 'span12'; endif; ?>">
         <div id="content-wrapper" class="content-wrapper">
+          <?php if (!($is_front) && ($breadcrumb)): ?>
+            <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+          <?php endif; ?>
           <div id="content-head" class="row-fluid content-head">
             <?php if ($page['highlighted']): ?>
             <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>

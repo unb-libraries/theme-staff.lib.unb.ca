@@ -39,10 +39,10 @@ table>tbody>tr.odd>td,
 table>tbody>tr.odd>th { background-color: #f9f9f9; }
 
 thead th {
-  background-color: rgb(166, 5, 5);
-  background-color: rgba(166, 5, 5, 0.9);
+  background-color: #444;
   color: #fff;
 }
+
 /* ----- Forms ----------------------- */
 label {
   display: inline-block;
@@ -93,6 +93,13 @@ select {
 .btn-default { margin: 1em 0; }
 .btn-default:hover { color: #aa0404; }
 
+.navbar .btn-navbar .icon-bar {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #000;
+}
+
 /* ----- Fieldsets ----- */
 /* Bootstrap-panel behaviour for LCD display, etc. */
 fieldset {
@@ -131,7 +138,6 @@ legend:hover { cursor: pointer; }
 #block-system-user-menu ul.menu a { text-transform: none; }
 
 /* NAVIGATION ***************************** */
-/* ----- Main Navigation ------------- */
 
 /* ----- Book Outline: View Block ----- */
 /* hide default menu without child items */
@@ -145,13 +151,19 @@ legend:hover { cursor: pointer; }
   padding-bottom: 0;
 }
 #block-views-outline-block h2 {
-  background: url(../images/outline-16.png) no-repeat left center, url(/misc/menu-expanded.png) no-repeat right center;
+  background: url(../images/outline-16.png) no-repeat left top, url(/misc/menu-expanded.png) no-repeat right center;
+  color: #c00;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   float: right;
   font-size: 1em;
   font-weight: normal;
   padding:0 12px 0 20px;
+}
+#block-views-outline-block h2:hover {
+  background: url(../images/outline-16.png) no-repeat left bottom, url(/misc/menu-expanded.png) no-repeat right center;
+  color: #aa0404;
+  text-decoration: underline;
 }
 #block-views-outline-block .content {
   clear: both;
@@ -183,14 +195,6 @@ legend:hover { cursor: pointer; }
 /* ----- System menus ----- */
 /* user menu */
 #block-system-user-menu { margin-top: 1em; }
-#block-system-user-menu a[href="/user"] {
-  background: transparent url(../images/my-account-16.png) no-repeat 3px center;
-  padding-left: 20px;
-}
-#block-system-user-menu a[href="/user/logout"] {
-  background: transparent url(../images/logout-16.png) no-repeat 4px center;
-  padding-left: 23px;
-}
 
 .content>ul.menu>li>a {
   font-weight: bold;
@@ -201,27 +205,75 @@ legend:hover { cursor: pointer; }
   text-transform: none;
 }
 
-ul.menu li.expanded>a,
-ul.menu li.collapsed>a {
-  color: #aa0404;
-  font-weight: bold;
+ul.menu li a { color: #333; }
+.menu .menu li.expanded a:hover {
+  color: #900;
+  cursor: pointer;
 }
 
-ul.menu li { margin: 0 0 0.5em 0.5em; }
-ul.menu ul.menu ul.menu { margin-top: 0.5em; }
+/* bootstrap override: no background color on top level menu list links */
+.content>.nav>li>a:hover,
+.content>.nav>li>a:focus { background-color: inherit; }
 
-ul.nav { margin-bottom:0; }
+ul.menu li a[href]:focus,
+ul.menu li a[href]:hover {
+  color: #900;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+ul.menu li.leaf.active-trail a,
+ul.menu li.leaf.active-trail a:hover {
+  color: #ca0f18;
+  cursor: default;
+  text-decoration: none;
+}
+
+.content>.menu>li.expanded {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+ul.menu li {
+  margin-bottom: 0.75em;
+}
+ul.menu .menu li {
+  margin-bottom: 0.25em;
+}
+ul.nav { margin-bottom: 0; }
+
+/* toggle sidebar nav menu block / responsive 'navbar' menu */
 #main-menu { display: none; }
 #block-system-navigation { display: block; }
 
+/* tweak navbar button appearance, unhide button text */
 .navbar .btn-navbar { padding: 7px 0 7px 10px;}
-.btn.btn-navbar::after {
-  content: 'Menus';
-  color: #333;
+.navbar .btn-navbar .icon-bar { margin-top: 3px; }
+.navbar .btn-navbar .hide {
   display: block;
-  margin-top: -1em;
-  width: 8em;
+  margin: 0 0.5em 0 22px;
+  color: #000;
+  text-shadow: none;
+  float: right;
 }
+
+/* navbar menu items */
+.navbar .nav>.active.expanded>a {
+  background: url(/misc/menu-expanded.png) no-repeat 3px center;
+}
+.navbar .nav>.active.collapsed>a {
+  background: url(/misc/menu-collapsed.png) no-repeat 3px center;
+}
+.navbar .nav>.expanded>a {
+  background: url(/misc/menu-collapsed.png) no-repeat left center;
+}
+#main-nav>.nav>.expanded>a { background: none; }
+.navbar .nav>.clicked>a {
+  background: url(/misc/menu-expanded.png) no-repeat left center;
+}
+.navbar .nav>.clicked>a,
+.navbar .nav>.expanded>a { padding-left: 12px; }
 
 .navbar .nav>.active>a,
 .navbar .nav>.active>a:hover,
@@ -232,6 +284,14 @@ ul.nav { margin-bottom:0; }
   margin-left: -1em;
   padding-left: 1.5em;
 }
+
+ul li.expanded {
+  list-style-image: url(/misc/menu-collapsed.png);
+}
+ul li.clicked {
+  list-style-image: url(/misc/menu-expanded.png);
+}
+
 .content ul.menu li.leaf.active-trail {
   background: url(/misc/message-16-ok.png) no-repeat left 3px;
   display: block;
@@ -249,55 +309,28 @@ ul.nav { margin-bottom:0; }
   margin-left: 0;
   text-transform: none;
 }
-.site-main-menu ul li.expanded>a,
-.navbar #main-nav>.nav>.active.expanded>a {
-  background: url(/misc/menu-expanded.png) no-repeat 3px center;
-  padding-left:1em;
-}
-.site-main-menu ul li.collapsed>a,
-.navbar #main-nav>.nav>.active.collapsed>a {
-  background: url(/misc/menu-collapsed.png) no-repeat 3px center;
-  padding-left: 1em;
-}
+.site-main-menu ul.menu li li.expanded { margin-left: -5px; }
 
 .nav-collapse .nav>li>a {
   padding: .2em 0 .3em .5em;
 }
-#main-nav li li { padding-left: 1.5em; }
-#main-nav li li.leaf { padding-left: 2em; }
 
-/* ----- Secondary Navigation -------- */
+/*#main-nav li li { padding-left: 1.5em; }*/
+#main-nav li li { padding-left: 2em; }
+
+
 /* ----- Breadcrumbs ----------------- */
 /* ----- First Sidebar Menu Blocks --- */
 .region-sidebar-first {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
 }
-#block-menu-menu-accounts h2 { background: url(../images/accounts-24.png) no-repeat 0.5em 2px; }
-#block-system-navigation h2 { background: url(../images/navigation-24.png) no-repeat 0.5em 2px; }
-.toggle-sb #block-system-navigation h2 { background: url(../images/navigation-min-24.png) no-repeat 0.5em 2px; }
 
 #sidebar-first h2 {
   border-bottom: 2px solid #e3e3e3;;
   font-size: 20px;
-  padding:0 0.5em 0.5em 2em;
+  padding:0 0.5em 0.5em 6px;
 }
-#sidebar-first h2:hover { cursor: pointer; }
-
-#sidebar-first,
-#content {
-  -webkit-transition: width 0.3s ease;
-  transition: width 0.3s ease;
-}
-#sidebar-first.toggle-sb {
-  font-size:smaller;
-  width: 15%!important;
-}
-#content.toggle-sb { width: 80%!important; }
-/* factor in front page second sidebar */
-.front #content.toggle-sb { width: 55%!important; }
-
-.toggle-sb .content ul.menu li.leaf.active-trail { background-position: left 1px; }
 
 #sidebar-first .block {
   border-bottom: 2px inset #e3e3e3;
@@ -392,7 +425,6 @@ ul.pager li div.ajax-progress { display: none; }
 /* CONTAINERS ***************************** */
 /* ----- Blocks ---------------------- */
 
-
 /* IMAGES ******************************** */
 /* Moved from 'Code per node': UNB Libraries Logos - Web */
 #node-2508 img {
@@ -402,6 +434,31 @@ ul.pager li div.ajax-progress { display: none; }
 }
 
 /* ICONS ********************************* */
+#block-system-user-menu a[href="/user"] {
+  background: transparent url(../images/my-account-16.png) no-repeat 3px center;
+  padding-left: 21px;
+}
+#block-system-user-menu a[href="/user/logout"] {
+  background: transparent url(../images/logout-16.png) no-repeat 4px center;
+  padding-left: 23px;
+}
+
+.form-actions #edit-submit {
+  background: url(/misc/message-16-ok.png) no-repeat 0.5em center;
+  padding-left: 2em;
+}
+.form-actions #edit-delete {
+  background: url(/misc/message-16-error.png) no-repeat 0.5em center;
+  padding-left: 2em;
+}
+.form-actions #edit-cancel {
+  background: url(../images/cancel-16.png) no-repeat 0.5em center;
+  padding-left: 2em;
+}
+.form-actions #edit-preview {
+  background: url(/misc/message-16-info.png) no-repeat 0.5em center;
+  padding-left: 2em;
+}
 
 /* HELPER CLASSES ************************ */
 /* ----- Style ----------------------- */
@@ -536,22 +593,6 @@ html.js fieldset.collapsed {
 }
 
 .form-actions { margin-top: 1em; }
-.form-actions #edit-submit {
-  background: url(/misc/message-16-ok.png) no-repeat 0.5em center;
-  padding-left: 2em;
-}
-.form-actions #edit-delete {
-  background: url(/misc/message-16-error.png) no-repeat 0.5em center;
-  padding-left: 2em;
-}
-.form-actions #edit-cancel {
-  background: url(../images/cancel-16.png) no-repeat 0.5em center;
-  padding-left: 2em;
-}
-.form-actions #edit-preview {
-  background: url(/misc/message-16-info.png) no-repeat 0.5em center;
-  padding-left: 2em;
-}
 .form-actions #edit-submit:hover,
 .form-actions #edit-preview:hover,
 .form-actions #edit-delete:hover { background-color: #eee; }
@@ -632,9 +673,15 @@ a#submit-event.btn.btn-default:focus {
 /* ----- Tables ----- */
 table.table input { padding: 2px 6px 3px; }
 
+/* Drupal View/Edit ul menu tabs */
+.tabs { margin-bottom: 0.5em; }
+
 /* Open Framework Overrides */
 .views-exposed-form .views-exposed-widget { max-width: 80%; }
 .main .block { margin-bottom: 1em; }
+.content-head { margin-bottom: 0; }
+.content>.nav { margin-left: 0.5em; }
+.sidebar .nav .nav .nav { margin-left: 0.5em; }
 
 /* ADMINISTRATION ************************ */
 /* ----- Admin ----------------------- */
@@ -642,44 +689,33 @@ table.table input { padding: 2px 6px 3px; }
 
 /* MEDIA QUERIES ************************* */
 /* ----- Responsive ------------------ */
+/* override Bootstrap widths */
 @media (max-width: 979px) and (min-width: 768px) {
-  #sidebar-first { width: 22%!important; }
-  #content,
-  #sidebar-second { width: 72%!important; }
-  #sidebar-first.toggle-sb { width: 20%!important; }
-  #content.toggle-sb { width: 74%!important; }
+  .span6, .span8, .span9,
+  .span3.site-sidebar-second,
+  .span12.site-sidebar-second { width: 61%; }
+  
+  .span3.site-sidebar-first,
+  .span4.site-sidebar-first { width: 33%; }
+
   #sidebar-second .block {
     float:left;
     width: 48%;
   }
-  #block-twitter-block-1.block { float: right; }
 }
 
 @media (max-width: 767px) {
+  /* Menu button/sidebar toggle */
   #main-menu { display: block; }
   #block-system-navigation { display: none; }
   
+  /* override Botstrap font weight */
   .nav-collapse .nav>li li a,
-  .nav-collapse .dropdown-menu a {
-    color: #c00;
-    font-weight: normal;
-  }
-  
-  .nav-collapse .nav>li>a:hover,
-  .nav-collapse .nav>li>a:focus,
-  .nav-collapse .dropdown-menu a:hover,
-  .nav-collapse .dropdown-menu a:focus {
-    background-color: #ececec;
-    color: #aa0404;
-  }
-  .site-sidebar-first .block { width: 100%; }
-  #sidebar-first.toggle-sb {
-    font-size: inherit;
-    width: 100%!important;
-  }
-  #sidebar-first h2:hover { cursor: default; }
-  #content.toggle-sb,
-  .front #content.toggle-sb { width: 100%!important; }
+  .nav-collapse .dropdown-menu a { font-weight: normal; }
+
+  /* override Bootstap parent list item link color */
+  .nav-collapse .nav>li>a,
+  .nav-collapse .dropdown-menu a { color: #333; }
 }
 
 /* override Open Framework: Outline toggle for Book content types */
@@ -688,7 +724,7 @@ table.table input { padding: 2px 6px 3px; }
 }
 
 @media (max-width: 480px) {
-  /* change User menu items to centered buttons */
+  /* style User menu items as centered buttons */
   #block-system-user-menu ul.menu { text-align: center; }
   #block-system-user-menu ul.menu a {
     border: 1px solid #ddd;
