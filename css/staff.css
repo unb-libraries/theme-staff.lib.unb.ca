@@ -318,7 +318,6 @@ ul li.clicked {
 /*#main-nav li li { padding-left: 1.5em; }*/
 #main-nav li li { padding-left: 2em; }
 
-
 /* ----- Breadcrumbs ----------------- */
 /* ----- First Sidebar Menu Blocks --- */
 .region-sidebar-first {
@@ -338,7 +337,6 @@ ul li.clicked {
   padding-bottom: 1em;
 }
 
-/* ----- Admin Menu ------------------ */
 /* ----- Pager Nav ------------------- */
 .book-navigation .page-links {
   border-spacing: 5px;
@@ -374,7 +372,6 @@ ul li.clicked {
   display: table-cell;
   padding: 0;
   vertical-align: middle;
-
 }
 .item-list .pager li.first,
 .item-list .pager li.pager-previous {
@@ -682,13 +679,16 @@ table.table input { padding: 2px 6px 3px; }
 .content-head { margin-bottom: 0; }
 .content>.nav { margin-left: 0.5em; }
 .sidebar .nav .nav .nav { margin-left: 0.5em; }
+#name-and-slogan {
+  padding: 0.5em 0;
+  width: auto;
+}
 
 /* ADMINISTRATION ************************ */
 /* ----- Admin ----------------------- */
 #admin-menu { font-size: 12px; }
 
 /* MEDIA QUERIES ************************* */
-/* ----- Responsive ------------------ */
 /* override Bootstrap widths */
 @media (max-width: 979px) and (min-width: 768px) {
   .span6, .span8, .span9,
@@ -738,6 +738,7 @@ table.table input { padding: 2px 6px 3px; }
   /* twitter feed full width */
   #block-twitter-block-1.block { width: 100%; }
 }
+
 /* ----- Print ----------------------- */
 @media print {
   body.node-type-library-hours a[href]:after {

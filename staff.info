@@ -2,7 +2,7 @@ name = Library Staff Subtheme
 base theme = open_framework
 description = Tableless, multi-column subtheme provided by <a href="http://webservices.stanford.edu">Stanford Web Services</a> as a subtheme of the <a href="http://openframework.stanford.edu">Open Framework theme</a>.
 core = 7.x
-version = 1.0
+version = 7.x-1.0
 
 stylesheets[all][] = css/staff.css
 scripts[] = js/staff.js
