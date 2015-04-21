@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* ----- Body ------------------------ */
 /* ----- Text ------------------------ */
 h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 h1 {
@@ -49,12 +48,9 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-input[type="file"] {
-  display: block;
-}
-select, input[type="file"] {
-  height: auto;
-}
+
+input[type="file"] { display: block; }
+select, input[type="file"] { height: auto; }
 
 select,
 input[type="text"],
@@ -62,8 +58,6 @@ input[type="password"] { height: 2.5em; }
 
 .form-type-radio input,
 .form-type-radio label { display: inline; }
-
-
 .form-type-radio input { margin: 0px 2px 2px 0; }
 
 .container-inline select {
@@ -71,14 +65,15 @@ input[type="password"] { height: 2.5em; }
   width: auto;
 }
 
-input:not(.hide).save-location {display: inline-block; }
+input:not(.hide).save-location { display: inline-block; }
+
 /*system theme */
 .form-item { margin-top: 0.5em; }
 
 /* ----- Bootstrap Overrides --------- */
 input,
-.btn-primary,
-select {
+select,
+.btn-primary {
   background-color: inherit;
   color: inherit;
   display: block;
@@ -101,7 +96,7 @@ select {
 }
 
 /* ----- Fieldsets ----- */
-/* Bootstrap-panel behaviour for LCD display, etc. */
+/* Bootstrap-panel-like behaviour for LCD display, etc. */
 fieldset {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -133,15 +128,14 @@ legend:hover { cursor: pointer; }
 }
 
 /* enable User menu block in Header region */
-#block-system-user-menu ul.menu {text-align: right; }
+#block-system-user-menu ul.menu { text-align: right; }
 #block-system-user-menu ul.menu li { display: inline-block; }
 #block-system-user-menu ul.menu a { text-transform: none; }
 
 /* NAVIGATION ***************************** */
-
 /* ----- Book Outline: View Block ----- */
-/* hide default menu without child items */
-.book-navigation .menu { display: none;}
+/* hide default book menu (without child items) */
+.book-navigation .menu { display: none; }
 
 /* replace with View Block containing child items * collapsible menu feature */
 #block-views-outline-block {
@@ -149,6 +143,10 @@ legend:hover { cursor: pointer; }
   float: right;
   margin-left:0.5em;
   padding-bottom: 0;
+}
+#block-views-outline-block .content {
+  clear: both;
+  display: none;
 }
 #block-views-outline-block h2 {
   background: url(../images/outline-16.png) no-repeat left top, url(/misc/menu-expanded.png) no-repeat right center;
@@ -165,10 +163,7 @@ legend:hover { cursor: pointer; }
   color: #aa0404;
   text-decoration: underline;
 }
-#block-views-outline-block .content {
-  clear: both;
-  display: none;
-}
+
 .outline-menu {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -184,29 +179,23 @@ legend:hover { cursor: pointer; }
   font-size: .9em;
   padding-left: 1.5em;
 }
-.outline-menu a.active:hover { cursor: default; }
-.outline-menu a.active .level2 { background: transparent url(/misc/message-16-ok.png) no-repeat left center; }
 .outline-menu .level3 {
   font-size: .9em;
   padding-left: 3em;
 }
+.outline-menu a.active:hover { cursor: default; }
+.outline-menu a.active .level2 { background: transparent url(/misc/message-16-ok.png) no-repeat left center; }
 .outline-menu a.active .level3 { background: transparent url(/misc/message-16-ok.png) no-repeat 1.5em center; }
 
 /* ----- System menus ----- */
 /* user menu */
 #block-system-user-menu { margin-top: 1em; }
 
-.content>ul.menu>li>a {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-#block-menu-menu-accounts .content>ul.menu>li>a {
-  font-weight: normal;
-  text-transform: none;
-}
-
-ul.menu li a { color: #333; }
-.menu .menu li.expanded a:hover {
+/* Sidebar navigation */
+.content>ul.menu>li>a { font-weight: bold; }
+#block-menu-menu-accounts .content>ul.menu>li>a { font-weight: normal; }
+.menu li a { color: #333; }
+.menu .menu .expanded a:hover {
   color: #900;
   cursor: pointer;
 }
@@ -221,7 +210,6 @@ ul.menu li a[href]:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-
 
 ul.menu li.leaf.active-trail a,
 ul.menu li.leaf.active-trail a:hover {
@@ -665,7 +653,10 @@ a#submit-event.btn.btn-default:focus {
  padding: 5px 14px;
  width: auto;
 }
-.date-nav-wrapper .pager li>a:hover { background-color: #eee; }
+.date-nav-wrapper .pager li>a:hover {
+  color: #c00;
+  background-color: #eee;
+}
 
 /* ----- Tables ----- */
 table.table input { padding: 2px 6px 3px; }
