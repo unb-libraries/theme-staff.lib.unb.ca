@@ -9,15 +9,14 @@
 /* ----- Text ------------------------ */
 h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 h1 {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   font-size: 36px;
   margin: 0 0 0.5em 0;
   padding-bottom: 7px;
 }
 
 .posted {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ccc;
   background-color: #f6f6f6;
   color: #666;
   padding: 2px;
@@ -422,7 +421,6 @@ ul.pager li div.ajax-progress { display: none; }
 
 /* VIEWS ********************************** */
 /* front page news */
-.untrimmed { margin-bottom: 4em; }
 .untrimmed+.read-more { display: none; }
 
 .view-front-page .views-row {
@@ -430,7 +428,7 @@ ul.pager li div.ajax-progress { display: none; }
 }
 .front h1 { font-size: 31.5px; }
 .view-front-page .views-row h2 {
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 .view-front-page .views-row a:hover { text-decoration: underline; }
@@ -451,13 +449,15 @@ ul.pager li div.ajax-progress { display: none; }
 }
 
 /* IMAGES ******************************** */
-.node-front-page-notice .field-name-body:after {
+.view-front-page img { display: none; }
+.read-more:after {
   clear: both;
   content: ".";
   display: block;
   height: 0;
   visibility: hidden;
 }
+.posted { margin: 1em 0 3em 0; }
 
 /* image styles */
 .front-content-img {
@@ -479,9 +479,9 @@ ul.pager li div.ajax-progress { display: none; }
 
 /* Moved from 'Code per node': UNB Libraries Logos - Web */
 #node-2508 img {
-    margin: 20px 0;
-    padding: 5px;
-    border: #c0c0c0 1px solid;
+  margin: 20px 0;
+  padding: 5px;
+  border: 1px solid #c0c0c0;
 }
 
 /* ICONS ********************************* */
@@ -721,6 +721,7 @@ table .checkbox input[type="checkbox"] {
   border-color: #adadad;
   color: #aa0404;
 }
+.view-footer { border-top: 1px solid #ddd; }
 
 a#submit-event.btn.btn-default:hover,
 a#submit-event.btn.btn-default:focus {
