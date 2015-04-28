@@ -16,9 +16,10 @@ h1 {
 }
 
 .posted {
-  border-bottom: 2px solid #ccc;
-  background-color: #f6f6f6;
-  color: #666;
+  border-bottom: 1px solid #bcbcbc ;
+  background-color: #f8f8f8 ;
+  color: #444;
+  font-size: 0.85em;
   padding: 2px;
 }
 
@@ -595,6 +596,9 @@ body .container.main-container a:hover, body .container.main-container a:focus {
 }
 
 /* GENERAL OVERRIDES ********************* */
+/* force full-width 2nd sidebar iframe, i.e. Twitter */
+#sidebar-second iframe { width: 100%!important; }
+
 /* front page content-header */
 .front .content-head, .mc-content { margin-bottom: 0; }
 
@@ -612,6 +616,10 @@ tr.even .form-item {
 .form-managed-file .form-submit {
   display: inline;
 }
+
+/* Staff calendar sidebar */
+.sidebar .view-staff-calendar { margin-bottom: 1.5em; }
+.sidebar .view-staff-calendar .btn { width: 100%; }
 
 /* Desk statistics custom module*/
 .page-desk-stats .subgroup { margin-left: 1.3em; }
@@ -767,39 +775,42 @@ table.table input { padding: 2px 6px 3px; }
 /* MEDIA QUERIES ************************* */
 /* override Bootstrap widths */
 @media (max-width: 979px) and (min-width: 768px) {
-  .span6, .span8, .span9,
-  .span3.site-sidebar-second,
-  .span12.site-sidebar-second { width: 61%; }
-
-  .span3.site-sidebar-second,
-  .span12.site-sidebar-second  { float:right; }
-  
-  .span3.site-sidebar-first,
-  .span4.site-sidebar-first { width: 33%; }
-
-  #sidebar-second .block {
-    float:left;
-    width: 48%;
+/* keep 2nd sidebar to right of page with content */
+  .logged-in .site-sidebar-second.span12 {
+    float: right;
+    width: 476px;
   }
+
+  /* override bootstrap span4 on 2nd sidebar */
+  .logged-in .site-sidebar-second .row-fluid .span4 { width: 48.5%; }
+  .site-sidebar-second .row-fluid .span4 { width: 100%; }
+
 }
 
 @media (max-width: 767px) {
   /* Menu button/sidebar toggle */
-  #main-menu { display: block; }
+  .logged-in #main-menu { display: block; }
   #block-system-navigation { display: none; }
   
-  /* override Botstrap font weight */
+  /* override Bootstrap font weight */
   .nav-collapse .nav>li li a,
   .nav-collapse .dropdown-menu a { font-weight: normal; }
 
   /* override Bootstap parent list item link color */
   .nav-collapse .nav>li>a,
   .nav-collapse .dropdown-menu a { color: #333; }
+
+  .logged-in .site-sidebar-second .block {
+    width: 48.5%;
+  }
 }
 
 /* override Open Framework: Outline toggle for Book content types */
 @media (max-width: 767px) and (min-width: 481px) {
   .content-body .block { width: auto; }
+
+  /* override openframework */
+  .site-sidebar-second .block { width: 100%; }
 }
 
 @media (max-width: 480px) {
@@ -814,8 +825,8 @@ table.table input { padding: 2px 6px 3px; }
   }
   #block-system-user-menu ul.menu a:hover { background-color: #e5e5e5; }
 
-  /* twitter feed full width */
-  #block-twitter-block-1.block { width: 100%; }
+  /* switch full-width sidebar blocks */
+  .logged-in .site-sidebar-second .block { width: 100%; }
 }
 
 /* ----- Print ----------------------- */
