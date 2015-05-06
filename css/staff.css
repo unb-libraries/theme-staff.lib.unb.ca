@@ -421,6 +421,29 @@ ul li.clicked {
 ul.pager li div.ajax-progress { display: none; }
 
 /* VIEWS ********************************** */
+/* user information */
+.view-role-lists .view-header {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #d6d6d6;
+  border-top: 2px solid #d6d6d6;
+  font-weight: bold;
+  margin-bottom:1em;
+  padding:0.5em;
+}
+.view-role-lists .view-filters {
+  border:1px solid #d6d6d6;
+  margin-bottom: 1em;
+  padding:0 0.5em;
+}
+.view-role-lists .views-exposed-form .views-exposed-widget .form-submit { margin-top:1em; }
+.view-role-lists thead th {
+  background-color: #e6e6e6;
+  color:#333;
+}
+.view-role-lists td .item-list ul { margin-left:0.75em; }
+.view-role-lists td li { font-size:smaller; }
+#autocomplete { background: #fff; padding:0 .25em; }
+
 /* front page news */
 .untrimmed+.read-more { display: none; }
 
@@ -518,14 +541,14 @@ ul.pager li div.ajax-progress { display: none; }
 /* ----- Style ----------------------- */
 .btn:focus { outline: none; }
 
-.description ,
+.description,
 .fieldset-description { 
   color: #888;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-
+.disabled { color: #717171; }
 .text-format-wrapper .description { padding: 0.5em 0; }
 
 /* bootstrap-style submitted text */
