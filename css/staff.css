@@ -784,7 +784,7 @@ table.table input { padding: 2px 6px 3px; }
 .views-exposed-form .views-exposed-widget { max-width: 80%; }
 .main .block { margin-bottom: 1em; }
 .content-head { margin-bottom: 0; }
-.content>.nav { margin-left: 0.5em; }
+#block-system-navigation .content>.nav { margin-left: 0.5em; }
 .sidebar .nav .nav .nav { margin-left: 0.5em; }
 #name-and-slogan {
   padding: 0.5em 0;
