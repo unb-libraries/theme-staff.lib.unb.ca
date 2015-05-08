@@ -440,6 +440,7 @@ ul.pager li div.ajax-progress { display: none; }
   background-color: #e6e6e6;
   color:#333;
 }
+.view-role-lists th a { display:block; }
 .view-role-lists td .item-list ul { margin:0.16em 0 0 0.5em; }
 .view-role-lists td li { font-size:smaller; }
 #autocomplete { background: #fff; padding:0 .25em; }
