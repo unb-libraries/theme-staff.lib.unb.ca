@@ -12,6 +12,7 @@
 <?php
   // The node id is contained in the Views $row variable.
   $body_items = field_get_items('node', node_load($row->nid), 'body');
+  $raw_body_value = '';
 ?>
 
 <?php if ($body_items): ?>
