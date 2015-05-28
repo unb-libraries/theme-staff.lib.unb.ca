@@ -305,7 +305,7 @@ ul li.clicked {
   list-style-image: url(/misc/menu-expanded.png);
 }
 
-.content ul.menu li.leaf.active-trail {
+.content .nav ul.menu li.leaf.active-trail {
   background: url(/misc/message-16-ok.png) no-repeat left 3px;
   display: block;
   margin-left: -1em;
