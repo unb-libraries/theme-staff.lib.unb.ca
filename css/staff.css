@@ -10,7 +10,7 @@
 h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 h1 {
   border-bottom: 1px solid #ddd;
-  font-size: 36px;
+  font-size: 31.5px;
   margin: 0 0 0.5em 0;
   padding-bottom: 7px;
 }
@@ -449,7 +449,6 @@ ul.pager li .ajax-progress { display: none; }
 .view-front-page .views-row {
   margin-bottom: 2em;
 }
-.front h1 { font-size: 31.5px; }
 .view-front-page .views-row h2 {
   font-size: 1.3em;
   font-weight: bold;
