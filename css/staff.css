@@ -616,6 +616,7 @@ hr.fancy:after {
 /* hide any "not authorized" message but show user login */
 .not-logged-in:not(.page-user) #block-system-main { display: none; }
 
+/* Migrated from Code per node global.css */
 body .container.main-container a,
 body .container.main-container a:visited {
     color: #cc0000;
