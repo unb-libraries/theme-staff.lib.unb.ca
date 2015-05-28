@@ -509,9 +509,22 @@ ul.pager li .ajax-progress { display: none; }
 /* ICONS ********************************* */
 .sticky .posted { background: #f6f6f6 url(../images/sticky.png) no-repeat 99.6% center; }
 
+.pr-request-form-toggle input.pr-requests-send-button {
+  background-image: url(../images/send-16.png);
+  background-repeat: no-repeat;
+  background-position: 3px 0.6em;
+  padding-left: 23px;
+}
+.pr-request-form-toggle input.pr-requests-send-button:hover {
+  background-color:#eee;
+}
 #block-system-user-menu a[href="/user"] {
   background: transparent url(../images/my-account-16.png) no-repeat 3px center;
   padding-left: 21px;
+}
+#block-system-user-menu a[href="/trouble-tickets"] {
+  background: transparent url(../images/life-preserver-16.png) no-repeat 3px center;
+  padding-left: 22px;
 }
 #block-system-user-menu a[href="/user/logout"] {
   background: transparent url(../images/logout-16.png) no-repeat 4px center;
