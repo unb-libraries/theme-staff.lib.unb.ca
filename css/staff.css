@@ -876,7 +876,77 @@ a#submit-event.btn.btn-default:focus {
 
 /* ----- Print ----------------------- */
 @media print {
-  .node-type-library-hours a[href]:after {
-    content: none;
+  /* Leah Student application selectors */
+  .node-type-student-application #header,
+  .node-type-student-application.logged-in #main-menu,
+  .node-type-student-application #sidebar-first,
+  .node-type-student-application #breadcrumb,
+  .node-type-student-application .hired a,
+  .node-type-student-application .submitted {
+    display: none;
   }
+ /* end student application selectors */
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12pt;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")" ! important;
+    color: #333;
+    font-size: 10pt;
+    font-style: italic;
+    font-weight: normal;
+    word-wrap: break-word;
+  }
+  .node-type-library-hours a[href]:after,
+  #logo a[href]:after,
+  .submitted a[href]:after,
+  a[href^="/content"]:after,
+  a[href^="#"]:after,
+  a[href^="javascript"]:after,
+  .pager a[href]:after { content: none ! important; }
+
+  #main-content .row,
+  .logged-in .site-sidebar-second .block {
+    margin: 0;
+    width: 100% ! important;
+  }
+  #main-menu,
+  #block-system-user-menu,
+  #sidebar-first,
+  #breadcrumb,
+  #block-views-outline-block,
+  .views-field-edit-node,
+  .read-more { display: none ! important; }
+
+  .header-section,
+  #content,
+  #sidebar-second {
+    margin: 0;
+  }
+  #content { width:100%; }
+  .front #content {
+    float: left;
+    width: 66%;
+  }
+  .front #sidebar-second {
+    float: right;
+    width: 33%;
+  }
+  #header {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+  .header-section {
+    background: #fff;
+    margin: 0 ! important;
+  }
+  thead th,
+  tbody th {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+  }
+  td.multi-day div.monthview { border: 1px solid #333;}
 }
