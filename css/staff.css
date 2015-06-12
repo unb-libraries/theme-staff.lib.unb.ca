@@ -918,7 +918,8 @@ a#submit-event.btn.btn-default:focus {
   #breadcrumb,
   #block-views-outline-block,
   .views-field-edit-node,
-  .read-more { display: none ! important; }
+  .read-more,
+  .pager { display: none ! important; }
 
   .header-section,
   #content,
