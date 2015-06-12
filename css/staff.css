@@ -905,7 +905,8 @@ a#submit-event.btn.btn-default:focus {
   a[href^="/content"]:after,
   a[href^="#"]:after,
   a[href^="javascript"]:after,
-  h2 a[href]:after { content: none ! important; }
+  h2 a[href]:after,
+  td a[href]:after { content: none ! important; }
 
   #main-content .row,
   .logged-in .site-sidebar-second .block {
