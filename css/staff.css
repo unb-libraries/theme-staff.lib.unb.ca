@@ -736,12 +736,18 @@ html.js fieldset.collapsed {
   border-bottom-right-radius: 0;
   /* fix ajax "No file chosen" text vertical position for webkit + moz */
   display: inline-flex;
-  width: 80%;
+  width: 75%;
 }
+.form-managed-file span.file {
+  display: inline-block;
+  width: 74.5%;
+}
+.form-managed-file input[value="Remove"],
 .form-managed-file input[value="Upload"] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   display: inline-block;
+  float: right;
   width: 20%;
 }
 
