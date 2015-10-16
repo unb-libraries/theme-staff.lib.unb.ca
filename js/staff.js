@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
     });
   
     // Design Requests page fix: all content hidden until 'edit-supervisor-approved' checkbox checked
-    jQuery("#edit-supervisor-approved").click(function () { 
+    jQuery("#edit-supervisor-approved").click(function () {
         jQuery(this).parents("div").next("div").find("fieldset").toggleClass("wrapper-expanded wrapper-collapsed");
     });
 
