@@ -549,6 +549,10 @@ ul.pager li .ajax-progress { display: none; }
 }
 
 /* HELPER CLASSES ************************ */
+.needs-js {
+  display: none;
+}
+
 /* ----- Style ----------------------- */
 .description,
 .fieldset-description {
