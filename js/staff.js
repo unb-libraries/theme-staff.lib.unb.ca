@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
     });
     
     // class fieldsets as expanded (visible) or collapsed (hidden)
-    jQuery(".fieldset-wrapper:hidden").parent().addClass("wrapper-collapsed");
+    jQuery('fieldset[id!="edit-ticket-fieldset"] .fieldset-wrapper:hidden').parent().addClass('wrapper-collapsed');
     jQuery(".fieldset-wrapper:visible").parent().addClass("wrapper-expanded");
         
     // toggle expanding/collapsing fieldset content via legend click
