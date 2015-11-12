@@ -870,6 +870,10 @@ a#submit-event.btn.btn-default:focus {
 }
 
 @media (max-width: 480px) {
+  /* Open Framework override: scale header logo width */ 
+  .header .site-logo img {
+    max-width:100%;
+  }
   /* style User menu items as centered buttons */
   #block-system-user-menu ul.menu { text-align: center; }
   #block-system-user-menu ul.menu a {
