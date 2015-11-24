@@ -745,7 +745,7 @@ html.js fieldset.collapsed {
 }
 .form-managed-file span.file {
   display: inline-block;
-  width: 74.5%;
+  width: 67%;
 }
 .form-managed-file input[value="Remove"],
 .form-managed-file input[value="Upload"] {
@@ -870,7 +870,7 @@ a#submit-event.btn.btn-default:focus {
 }
 
 @media (max-width: 480px) {
-  /* Open Framework override: scale header logo width */ 
+  /* Open Framework override: scale header logo width */
   .header .site-logo img {
     max-width:100%;
   }
