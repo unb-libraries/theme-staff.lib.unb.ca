@@ -105,7 +105,7 @@
       <?php endif; ?>
       <div id="content" class="mc-content <?php if (($page['sidebar_first']) && ($page['sidebar_second'])): print 'span6'; elseif (($page['sidebar_first']) || ($page['sidebar_second'])): print 'span9'; else: print 'span12'; endif; ?>">
         <div id="content-wrapper" class="content-wrapper">
-          <?php if (!($is_front) && ($breadcrumb)): ?>
+          <?php if (!($is_front) && $breadcrumb && strpos($breadcrumb, '/sort">') === FALSE): ?>
             <div id="breadcrumb"><?php print $breadcrumb; ?></div>
           <?php endif; ?>
           <div id="content-head" class="row-fluid content-head">
