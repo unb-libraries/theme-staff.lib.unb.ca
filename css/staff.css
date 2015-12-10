@@ -660,7 +660,13 @@ tr.odd .form-item,
 }
 
 /* fix image file upload widget Choose File + Uploads wrap */
-.image-widget-data { width: 100%; }
+.image-widget-data {
+  width: 100%;
+}
+/* cap form managed file width when preview image displayed */
+.image-preview + .image-widget-data {
+  max-width: 749px;
+}
 
 /* Staff calendar sidebar */
 .sidebar .view-staff-calendar { margin-bottom: 1.5em; }
@@ -747,6 +753,11 @@ html.js fieldset.collapsed {
   display: inline-block;
   width: 67%;
 }
+/* reduce width to compensate for thumbnail preview, if applicable */
+.form-managed-file .image-preview + .image-widget-data span.file {
+  width: 65%;
+}
+
 .form-managed-file input[value="Remove"],
 .form-managed-file input[value="Upload"] {
   border-top-left-radius: 0;
