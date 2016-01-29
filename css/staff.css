@@ -72,6 +72,10 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+/* Inline labels for comment forms */
+#comment-form label {
+  display: inline-block;
+}
 
 input[type="file"] { display: block; }
 select, input[type="file"] { height: auto; }
