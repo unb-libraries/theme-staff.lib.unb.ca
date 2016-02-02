@@ -42,12 +42,8 @@ a .summary { color: #999; }
   display: inline-block;
   margin-left: 2px;
   opacity: 0.7;
-  -o-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
 }
-.read-more a:hover:after { background: url(../images/more.png) no-repeat left center; }
+.read-more a:hover:after { background: url(../images/more.png) no-repeat 1px center; }
 
 /* ----- Lists ----------------------- */
 li {
