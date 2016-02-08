@@ -419,6 +419,12 @@ ul li.clicked {
 ul.pager li .ajax-progress { display: none; }
 
 /* VIEWS ********************************** */
+/* Fix drag icon size (Draggable Views) */
+.view-lcd-display-photos-active a.tabledrag-handle .handle {
+  height: auto;
+  width: auto;
+}
+
 /* user information */
 .view-role-lists .view-header {
   background-color: #f5f5f5;
