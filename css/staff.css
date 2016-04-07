@@ -985,3 +985,11 @@ a#submit-event.btn.btn-default:focus {
   }
   td.multi-day div.monthview { border: 1px solid #333;}
 }
+/* Student Application print fix */
+@media print {
+  .row {margin:0;} /* IE+Firefox negative margin page cut */
+
+  @-moz-document url-prefix() {
+    @page {margin: .5in .25in;} /* Firefox content overlap with header&footer */
+  }
+}
