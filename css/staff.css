@@ -218,7 +218,6 @@ legend:hover { cursor: pointer; }
 
 /* Sidebar navigation */
 .content>ul.menu>li>a { font-weight: bold; }
-#block-menu-menu-accounts .content>ul.menu>li>a { font-weight: normal; }
 .menu li a { color: #333; }
 .menu .menu .expanded a:hover {
   color: #900;
@@ -834,7 +833,8 @@ a#submit-event.btn.btn-default:focus {
 .views-exposed-form .views-exposed-widget { max-width: 80%; }
 .main .block { margin-bottom: 1em; }
 .content-head { margin-bottom: 0; }
-#block-system-navigation .content>.nav { margin-left: 0.5em; }
+#block-system-navigation .content>.nav,
+#block-menu-menu-accounts .content>.nav { margin-left: 0.5em; }
 .sidebar .nav .nav .nav { margin-left: 0.5em; }
 #name-and-slogan {
   padding: 0.5em 0;
