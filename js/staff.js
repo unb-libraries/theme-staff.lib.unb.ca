@@ -1,27 +1,27 @@
 /*global jQuery, document, window*/
 
-jQuery(document).ready(function () { 
+jQuery(document).ready(function () {
     // Fix menu list items not containing a submenu yet classed as "collapsed", eg. Import
-    jQuery(".menu li:not(:has(ul))").removeClass("collapsed").addClass("leaf");  
-  
+    jQuery(".menu li:not(:has(ul))").removeClass("collapsed").addClass("leaf");
+
     // remove href attribute from first link of "expanded" menu list items: act as toggle item
     jQuery(".menu li.expanded>a").removeAttr("href");
     //jQuery(".menu .menu li.expanded>a").removeAttr("href").css("cursor","pointer");
-   
-    // collapse submenu items by default; flag submenu as clicked/expanded if it contains the active link 
+
+    // collapse submenu items by default; flag submenu as clicked/expanded if it contains the active link
     jQuery(".menu .menu li.expanded").find('a:not(".active-trail")').next("ul").hide();
     jQuery(".menu .menu li.expanded a.active-trail").parent().toggleClass("clicked");
-  
+
     // click to expand/collapse submenu items, cliced class adjust arrow icon
     jQuery(".menu .menu li.expanded>a").click(function () {
         jQuery(this).parent().toggleClass("clicked");
         jQuery(this).next("ul").slideToggle("fast");
     });
-    
+
     // class fieldsets as expanded (visible) or collapsed (hidden)
     jQuery('fieldset[id!="edit-ticket-fieldset"] .fieldset-wrapper:hidden').parent().addClass('wrapper-collapsed');
     jQuery(".fieldset-wrapper:visible").parent().addClass("wrapper-expanded");
-        
+
     // toggle expanding/collapsing fieldset content via legend click
     jQuery("fieldset legend").click(function () {
         jQuery(this).parent().toggleClass("wrapper-expanded wrapper-collapsed");
@@ -43,7 +43,7 @@ jQuery(document).ready(function () {
     jQuery(".navbar-inner span.hide").text(function () {
         return jQuery(this).text().replace("Navigation menu", "Navigation");
     });
-  
+
     // Design Requests page fix: all content hidden until 'edit-supervisor-approved' checkbox checked
     jQuery("#edit-supervisor-approved").click(function () {
         jQuery(this).parents("div").next("div").find("fieldset").toggleClass("wrapper-expanded wrapper-collapsed");
@@ -51,4 +51,11 @@ jQuery(document).ready(function () {
 
     // Add 'Needs Javascript' feature like Library site
     jQuery(".needs-js").show();
+
+    // Definition term toggles definition data visibilty
+    jQuery("dl.toggle dd").hide();
+    jQuery("dl.toggle dt").click(function () {
+        jQuery(this).toggleClass('expanded');
+        jQuery(this).next("dd").slideToggle("fast");
+    });
 });
