@@ -51,6 +51,26 @@ li {
   margin-bottom: .5em;
 }
 
+/* Definition list 'toggle' support */
+dl.toggle dt:hover {
+  text-decoration: underline;
+}
+dl.toggle dt:before {
+  content: '\f0da';
+  display: inline-block; /* remove hover underline */
+  font-family: FontAwesome;
+  margin-right: .7em;
+  text-decoration: none;
+}
+dl.toggle dt.expanded:before {
+  content: '\f0d7';
+  margin-right: .5em; /* prevent horizontal position shift (unequal icon width) */
+}
+dl.toggle dd {
+  margin-bottom: 1em;
+  margin-left: 1.1em;
+}
+
 /* ----- Tables ---------------------- */
 table { width: 100%; }
 
