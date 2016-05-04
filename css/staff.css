@@ -67,7 +67,7 @@ dl.toggle dt.expanded:before {
   margin-right: .5em; /* prevent horizontal position shift (unequal icon width) */
 }
 dl.toggle dd {
-  martin-top: .5em;
+  margin-top: .5em;
   margin-bottom: 1em;
   margin-left: 1.1em;
 }
