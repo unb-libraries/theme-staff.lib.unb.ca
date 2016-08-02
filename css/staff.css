@@ -53,6 +53,7 @@ li {
 
 /* Definition list 'toggle' support */
 dl.toggle dt:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 dl.toggle dt:before {
