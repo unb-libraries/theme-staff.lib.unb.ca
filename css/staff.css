@@ -672,7 +672,7 @@ body .container.main-container a:focus {
 .front .content-head, .mc-content { margin-bottom: 0; }
 
 /* Image file + Insert button */
-.tabledrag-handle .handle {
+a.tabledrag-handle .handle {
   height: 22px;
   margin: 0 1em;
   width: 20px;
