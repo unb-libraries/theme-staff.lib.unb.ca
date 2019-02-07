@@ -126,6 +126,11 @@ select,
   min-width:5em;
   width:100%;
 }
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 1em;
+}
+
 .btn-primary:hover {
   background-color: inherit;
   color: inherit;
